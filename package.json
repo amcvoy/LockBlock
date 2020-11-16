@@ -1,0 +1,41 @@
+{
+  "name": "lockblock",
+  "version": "1.0.1",
+  "productName": "LockBlock",
+  "description": "LockBlock",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "publish": "electron-builder -p always"
+  },
+  "author": "Adrian McVoy",
+  "license": "ISC",
+  "build": {
+    "appId": "lockblock",
+    "nsis": {
+      "include": "build/installer.nsh",
+      "createDesktopShortcut": false
+    },
+    "publish": [
+      {
+        "provider": "github"
+      }
+    ],
+    "win": {
+      "icon": "build/icon.ico",
+      "publish": [
+        "github"
+      ]
+    }
+  },
+  "devDependencies": {
+    "electron": "^10.1.5",
+    "electron-builder": "^22.9.1"
+  },
+  "dependencies": {
+    "electron-log": "^4.3.0",
+    "electron-updater": "4.3.5"
+  }
+}
