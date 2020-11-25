@@ -1,3 +1,3 @@
 # LockBlock
 
-Attempts to block power saving enforced by machine policies.
+Attempts to block automatic locking of a PC enforced by machine policies.
