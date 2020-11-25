@@ -1,6 +1,6 @@
 {
   "name": "lockblock",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "productName": "LockBlock",
   "description": "LockBlock",
   "main": "main.js",
@@ -35,6 +35,7 @@
     "electron-builder": "^22.9.1"
   },
   "dependencies": {
+    "about-window": "^1.13.4",
     "electron-log": "^4.3.0",
     "electron-updater": "4.3.5"
   }

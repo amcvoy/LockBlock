@@ -6,6 +6,8 @@ const os = require('os');
 const Store = require('./store.js');
 const Updater = require('./updater.js');
 
+const openAboutWindow = require('about-window').default;
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win = null;
@@ -157,6 +159,18 @@ app.on('ready', () => {
             }
         },
         { type: 'separator' },
+        {
+            id: 'about',
+            label: 'About LockBlock',
+            click: function () {
+                openAboutWindow({
+                    icon_path: path.join(__dirname, '/assets/lock-128.png'),
+                    package_json_dir: __dirname,
+                    description: 'Lockdown Version'
+                })
+            }
+        },
+        { type: 'separator' },
         { role: 'quit' }
     ]);
     tray.setToolTip('LockBlock');
@@ -180,11 +194,11 @@ app.on('ready', () => {
 app.on('window-all-closed', () => {
     // On macOS it is common for applications and their menu bar
     // to stay active until the user quits explicitly with Cmd + Q
-    lockBlock(false);
+    //lockBlock(false);
 
-    if (process.platform !== 'darwin') {
-        app.quit();
-    }
+    //if (process.platform !== 'darwin') {
+    //    app.quit();
+    //}
 })
 
 app.on('activate', () => {
