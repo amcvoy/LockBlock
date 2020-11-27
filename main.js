@@ -16,19 +16,19 @@ let tray = null;
 let blockerId = 0;
 let sleepState = false;
 
-const hostname = os.hostname();
-const release = os.release();
+const icon16 = path.join(__dirname, '/assets/lock-16.ico');
+const icon128 = path.join(__dirname, '/assets/lock-128.png');
 
 const notificationEnabled = {
     title: 'LockBlock',
     body: 'Screen lock is enabled!',
-    icon: path.join(__dirname, '/assets/lock-128.png')
+    icon: icon128
 };
 
 const notificationDisabled = {
     title: 'LockBlock',
     body: 'Screen lock is disabled!',
-    icon: path.join(__dirname, '/assets/lock-128.png')
+    icon: icon128
 };
 
 // initialize the store
@@ -117,8 +117,7 @@ app.on('ready', () => {
 
     // Set up the System Tray Icon and Menu
     // tray = new Tray('./assets/lock-16.ico');
-    const icon = path.join(__dirname, '/assets/lock-16.ico');
-    tray = new Tray(icon);
+    tray = new Tray(icon16);
     const contextMenu = Menu.buildFromTemplate([
         {
             label: 'Enabled',
@@ -164,9 +163,9 @@ app.on('ready', () => {
             label: 'About LockBlock',
             click: function () {
                 openAboutWindow({
-                    icon_path: path.join(__dirname, '/assets/lock-128.png'),
+                    icon_path: icon128,
                     package_json_dir: __dirname,
-                    description: 'Lockdown Version'
+                    description: 'Lockdown Edition'
                 })
             }
         },
@@ -192,8 +191,7 @@ app.on('ready', () => {
 
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {
-    // On macOS it is common for applications and their menu bar
-    // to stay active until the user quits explicitly with Cmd + Q
+    // Don't quit! We have a main window which never opens
     //lockBlock(false);
 
     //if (process.platform !== 'darwin') {

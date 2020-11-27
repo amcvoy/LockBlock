@@ -1,8 +1,8 @@
 {
   "name": "lockblock",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "productName": "LockBlock",
-  "description": "LockBlock",
+  "description": "LockBlock Lockdown Edition",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
