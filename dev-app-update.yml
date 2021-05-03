@@ -1,0 +1,4 @@
+owner: amcvoy
+repo: LockBlock
+provider: github
+updaterCacheDirName: lockblock-updater

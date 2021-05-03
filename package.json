@@ -37,6 +37,6 @@
   "dependencies": {
     "about-window": "^1.13.4",
     "electron-log": "^4.3.0",
-    "electron-updater": "4.3.5"
+    "electron-updater": "^4.3.5"
   }
 }
