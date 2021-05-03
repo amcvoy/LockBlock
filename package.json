@@ -1,6 +1,6 @@
 {
   "name": "lockblock",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "productName": "LockBlock",
   "description": "LockBlock Lockdown Edition",
   "main": "main.js",
